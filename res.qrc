@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/about.svg</file>
+        <file>images/allchose.svg</file>
+        <file>images/autonextLine.svg</file>
+        <file>images/back.svg</file>
+        <file>images/baocun.svg</file>
+        <file>images/bianjiqi.svg</file>
+        <file>images/copy.svg</file>
+        <file>images/cut.svg</file>
+        <file>images/dakai.svg</file>
+        <file>images/exchange.svg</file>
+        <file>images/font.svg</file>
+        <file>images/put.svg</file>
+        <file>images/recover.svg</file>
+        <file>images/saveNew.svg</file>
+        <file>images/serach.svg</file>
+        <file>images/showLine.svg</file>
+        <file>images/toolBar.svg</file>
+        <file>images/xinjianchuangkou.svg</file>
+        <file>images/statusbar.svg</file>
+    </qresource>
+</RCC>
