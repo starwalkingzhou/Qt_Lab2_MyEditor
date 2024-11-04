@@ -34,7 +34,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit"/>
+          <widget class="QLineEdit" name="FindTarget"/>
          </item>
         </layout>
        </item>
@@ -54,7 +54,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_2"/>
+          <widget class="QLineEdit" name="changeTarget"/>
          </item>
         </layout>
        </item>
@@ -101,28 +101,28 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="btnFindNext">
          <property name="text">
           <string>查找下一个(&amp;F)</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="btnChange">
          <property name="text">
           <string>替换(&amp;R)</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="btnChangeAll">
          <property name="text">
           <string>全部替换(&amp;A)</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="btnCancel">
          <property name="text">
           <string>取消</string>
          </property>

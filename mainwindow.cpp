@@ -46,6 +46,9 @@ MainWindow::MainWindow(QWidget *parent)
         ui->textEdit->setLineWrapMode(QPlainTextEdit::NoWrap);
         ui->actionAutoNextLine->setCheckable(true);
     }
+
+    ui->actionToolBar->setChecked(true);
+    ui->actionStausBar->setChecked(true);
 }
 
 MainWindow::~MainWindow()
@@ -62,7 +65,7 @@ void MainWindow::on_actionAbout_triggered()
 
 void MainWindow::on_actionSeach_triggered()
 {
-    SearchDialog dlg;
+    SearchDialog dlg(this,ui->textEdit);
     dlg.exec();
 }
 
@@ -304,5 +307,35 @@ void MainWindow::on_actionFont_triggered()
 
     if(ok)
         ui->textEdit->setFont(font);
+}
+
+
+void MainWindow::on_actionToolBar_triggered()
+{
+    bool visable = ui->toolBar->isVisible();
+    ui->toolBar->setVisible(!visable);
+    ui->actionToolBar->setChecked(!visable);
+}
+
+
+void MainWindow::on_actionStausBar_triggered()
+{
+    bool visable = ui->statusbar->isVisible();
+    ui->statusbar->setVisible(!visable);
+    ui->actionStausBar->setChecked(!visable);
+}
+
+
+void MainWindow::on_actionAllChoose_triggered()
+{
+    ui->textEdit->selectAll();
+}
+
+
+void MainWindow::on_actionExit_triggered()
+{
+    if(userEditConfirmed()){
+        exit(0);
+    }
 }
 
