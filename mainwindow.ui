@@ -362,6 +362,9 @@
    </property>
   </action>
   <action name="actionAutoNextLine">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="res.qrc">
      <normaloff>:/images/autonextLine.svg</normaloff>:/images/autonextLine.svg</iconset>
@@ -443,6 +446,9 @@
    </property>
   </action>
   <action name="actionToolBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="res.qrc">
      <normaloff>:/images/toolBar.svg</normaloff>:/images/toolBar.svg</iconset>
@@ -458,6 +464,9 @@
    </property>
   </action>
   <action name="actionStausBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="res.qrc">
      <normaloff>:/images/statusbar.svg</normaloff>:/images/statusbar.svg</iconset>
