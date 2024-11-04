@@ -19,6 +19,9 @@ void SearchDialog::on_btnFindNext_clicked()
 {
     QString target = ui->seachText->text();//查询的目标字符串
 
+    if(target==""||pTextEdit==nullptr)
+        return;
+
     QString text = pTextEdit->toPlainText();//获取文本
     QTextCursor c = pTextEdit->textCursor();
     int index = -1;

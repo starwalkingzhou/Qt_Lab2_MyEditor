@@ -61,7 +61,7 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QCheckBox" name="checkBox">
+          <widget class="QCheckBox" name="cbCaseSensitive">
            <property name="text">
             <string>区分大小写</string>
            </property>
@@ -76,16 +76,16 @@
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_3">
               <item>
-               <widget class="QRadioButton" name="radioButton">
+               <widget class="QRadioButton" name="rbUp">
                 <property name="text">
                  <string>向上</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QRadioButton" name="radioButton_2">
+               <widget class="QRadioButton" name="rbDown">
                 <property name="text">
-                 <string>RadioButton</string>
+                 <string>向下</string>
                 </property>
                </widget>
               </item>

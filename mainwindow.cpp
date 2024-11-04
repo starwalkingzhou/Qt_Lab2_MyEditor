@@ -72,7 +72,7 @@ void MainWindow::on_actionSeach_triggered()
 
 void MainWindow::on_actionExchange_triggered()
 {
-    ReplaceDialog dlg;
+    ReplaceDialog dlg(this,ui->textEdit);
     dlg.exec();
 }
 
