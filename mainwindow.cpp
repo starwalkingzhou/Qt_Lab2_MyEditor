@@ -18,11 +18,11 @@ MainWindow::MainWindow(QWidget *parent)
     textChanged = false;
     on_actionNew_triggered();
 
-    statusLabel.setMaximumWidth(150);
+    statusLabel.setMaximumWidth(180);
     statusLabel.setText("lenth:"+QString::number(0)+"  lines:"+QString::number(1));
     ui->statusbar->addPermanentWidget(&statusLabel);
 
-    statusCussorLabel.setMaximumWidth(150);
+    statusCussorLabel.setMaximumWidth(180);
     statusCussorLabel.setText("lenth:"+QString::number(0)+"  Col:"+QString::number(1));
     ui->statusbar->addPermanentWidget(&statusCussorLabel);
 
@@ -49,6 +49,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->actionToolBar->setChecked(true);
     ui->actionStausBar->setChecked(true);
+    on_actionShowLine_triggered(false);
 }
 
 MainWindow::~MainWindow()
@@ -178,7 +179,9 @@ void MainWindow::on_textEdit_textChanged()
         this->setWindowTitle("*" + this->windowTitle());
         textChanged = true;
     }
-
+    statusLabel.setText("lenth:"+QString::number(ui->textEdit->toPlainText().length())+
+                        "  lines:"+
+                        QString::number(ui->textEdit->document()->lineCount()));
 }
 
 bool MainWindow::userEditConfirmed()
@@ -209,33 +212,33 @@ bool MainWindow::userEditConfirmed()
     return true;
 }
 
-
+//撤销
 void MainWindow::on_actionBack_triggered()
 {
     ui->textEdit->undo();
 }
 
-
+//恢复
 void MainWindow::on_actionRecover_triggered()
 {
     ui->textEdit->redo();
 }
 
-
+//剪切
 void MainWindow::on_actionCut_triggered()
 {
     ui->textEdit->cut();
     ui->actionPut->setEnabled(true);
 }
 
-
+//复制
 void MainWindow::on_actionCopy_triggered()
 {
     ui->textEdit->copy();
     ui->actionPut->setEnabled(true);
 }
 
-
+//粘贴
 void MainWindow::on_actionPut_triggered()
 {
     ui->textEdit->paste();
@@ -269,7 +272,7 @@ void MainWindow::on_actionFontColor_triggered()
     }
 }
 
-
+//
 void MainWindow::on_actEditBgColor_triggered()
 {
     QColor color = QColorDialog::getColor(Qt::black,this,"选择颜色");
@@ -325,7 +328,7 @@ void MainWindow::on_actionStausBar_triggered()
     ui->actionStausBar->setChecked(!visable);
 }
 
-
+//全选
 void MainWindow::on_actionAllChoose_triggered()
 {
     ui->textEdit->selectAll();
@@ -337,5 +340,33 @@ void MainWindow::on_actionExit_triggered()
     if(userEditConfirmed()){
         exit(0);
     }
+}
+
+
+void MainWindow::on_textEdit_cursorPositionChanged()
+{
+    int col = 0;
+    int ln = 0;
+    int flag =-1;
+    int pos=ui->textEdit->textCursor().position();
+    QString text = ui->textEdit->toPlainText();
+
+    for(int i=0;i<pos;i++){
+        if(text[i]=='\n'){
+            ln++;
+            flag=i;
+        }
+    }
+    flag++;
+    col = pos-flag;
+    statusLabel.setText("lenth:"+QString::number(ln+1)+
+                        "  lines:"+
+                        QString::number(col+1));
+}
+
+
+void MainWindow::on_actionShowLine_triggered(bool checked)
+{
+    ui->textEdit->hideLineNumberArea(!checked);
 }
 
